@@ -1,0 +1,48 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:G="urn:import:com.google.gwt.user.client.ui">
+    <g:VerticalPanel spacing="10">
+        <g:cell width="500px"  horizontalAlignment="ALIGN_RIGHT">
+            <g:Button ui:field="close" text="Close"/>
+        </g:cell>
+        <g:HorizontalPanel ui:field="tablePanel"/>
+        <g:HorizontalPanel>
+
+        <g:VerticalPanel>
+            <g:Label text="Address of shipping"/>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="Country: "/>
+                    <g:TextBox ui:field="countryBox"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="City: "/>
+                    <g:TextBox ui:field="cityBox"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="Street"/>
+                    <g:TextBox ui:field="streetBox"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="House: "/>
+                    <g:TextBox ui:field="houseBox"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="Flat: "/>
+                    <g:TextBox ui:field="flatBox"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel spacing="5">
+                    <g:Label text="Post index"/>
+                    <g:TextBox ui:field="indexBox"/>
+                </g:HorizontalPanel>
+                <g:Button ui:field="addAddress" text="Add address"/>
+                <g:Label ui:field="errorLabel"/>
+            </g:VerticalPanel>
+            <!--<g:VerticalPanel>-->
+                <!--<g:Button ui:field="chooseAddressButton" text="Choose address"/>-->
+                <!--<g:VerticalPanel ui:field="chooseAddressPanel" visible="false"/>-->
+            <!--</g:VerticalPanel>-->
+
+        </g:HorizontalPanel>
+        <g:Button ui:field="confirmOrder" text="Confirm order" visible="false"/>
+
+    </g:VerticalPanel>
+</ui:UiBinder>

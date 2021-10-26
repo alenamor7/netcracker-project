@@ -1,0 +1,37 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+        <g:HorizontalPanel spacing="7">
+            <g:Image ui:field="booksPhoto"/>
+            <g:VerticalPanel spacing="5">
+                <g:cell width="500px"  horizontalAlignment="ALIGN_RIGHT">
+                    <g:Button ui:field="close" text="Close"/>
+                </g:cell>
+                <g:Label ui:field="title"/>
+                <g:Label ui:field="author"/>
+                <g:HorizontalPanel >
+                    <g:Label text="Genre: "/>
+                    <g:Label ui:field="genre"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel >
+                    <g:Label text="Publisher: "/>
+                    <g:Label ui:field="publisher"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel >
+                    <g:Label text="Pages: "/>
+                    <g:Label ui:field="pages"/>
+                </g:HorizontalPanel>
+                <g:HorizontalPanel>
+                    <g:Label text="Price: "/>
+                    <g:Label ui:field="price"/>
+                    <g:Label text=" euro"/>
+                </g:HorizontalPanel>
+                <g:Label text="Description: "/>
+                <g:Label ui:field="description"/>
+                <g:Label ui:field="canBuy"/> <!--depends on qty of books. if gty = 0, then book is not available-->
+                <g:Button ui:field="toCart" text="Add to cart" visible="false"/>
+                <g:Button ui:field="editBook" text="Edit Book" visible="false"/>
+                <g:Button ui:field="deleteBook" text="Delete Book" visible="false"/>
+            </g:VerticalPanel>
+        </g:HorizontalPanel>
+
+</ui:UiBinder>

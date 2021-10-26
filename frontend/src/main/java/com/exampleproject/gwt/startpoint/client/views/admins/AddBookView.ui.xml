@@ -1,0 +1,50 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:VerticalPanel spacing="5">
+        <g:cell width="500px"  horizontalAlignment="ALIGN_RIGHT">
+            <g:Button ui:field="close" text="Close"/>
+        </g:cell>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Title: "/>
+            <g:TextBox ui:field="titleBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Author's name: "/>
+            <g:TextBox ui:field="authorsNameBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Author's surname: "/>
+            <g:TextBox ui:field="authorsSurnameBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Genre: "/>
+            <g:TextBox ui:field="genreBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Pages: "/>
+            <g:TextBox ui:field="pagesBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Publisher: "/>
+            <g:TextBox ui:field="publisherBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Quantity of book in shop: "/>
+            <g:TextBox ui:field="qtyBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Price"/>
+            <g:TextBox ui:field="priceBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Description: "/>
+            <g:TextArea ui:field="descriptionBox" width="200" height="70"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Photo's URL: "/>
+            <g:TextBox ui:field="photoBox"/>
+        </g:HorizontalPanel>
+        <g:Button ui:field="addBookButton" text="Add book"/>
+        <g:Label ui:field="errorLabel" />
+    </g:VerticalPanel>
+</ui:UiBinder>

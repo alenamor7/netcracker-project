@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--Это пример того как можно организовать мультимодульный проект-->
+  <groupId>ExampleProject</groupId>
+  <artifactId>ExampleProject</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <modules>
+    <!--Модуль сервера Тут содержиться вся логика и подключен спринг-->
+    <module>backend</module>
+    <!--Модуль ресурсов Классы из этого модуля используються одновременно и на сервере и на клиенте
+      Необходим для передачи данных между клиентом и сервером-->
+    <module>shared</module>
+    <!--Модуль клиента Написан GWT и код из этого модуля транслируеться в JS, который потом загружается
+      в браузер-->
+    <module>frontend</module>
+    <!--Модуль для создания WAR контейнера Необходим для деплоймента в TOMCAT-->
+    <module>warcompile</module>
+  </modules>
+  <!--Версии фреймворков-->
+  <properties>
+    <gwt.version>2.8.1</gwt.version>
+    <jdk.version>1.8</jdk.version>
+    <springframework.version>4.3.6.RELEASE</springframework.version>
+    <jackson.library>2.9.7</jackson.library>
+    <javax.version>8.0</javax.version>
+  </properties>
+</project>
+  <!--Created by InsideWorld-->

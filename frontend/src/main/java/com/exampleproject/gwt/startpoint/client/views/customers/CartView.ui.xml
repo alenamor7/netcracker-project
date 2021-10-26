@@ -1,0 +1,25 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:VerticalPanel spacing="10">
+        <g:cell width="500px"  horizontalAlignment="ALIGN_RIGHT">
+            <g:Button ui:field="close" text="Close"/>
+        </g:cell>
+        <g:HorizontalPanel ui:field="booksPanel"/>
+        <g:Label text="(Choose a book you want to delete and press button)"/>
+        <g:Button ui:field="deleteButton" text="Delete book"/>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Price: "/>
+            <g:Label ui:field="priceLabel" />
+            <g:Label text=" euro"/>
+        </g:HorizontalPanel>
+        <g:Button ui:field="placeOrder" text="Place your order" visible="false"/>
+        <!--<g:VerticalPanel ui:field="orderPanel">-->
+            <!--<g:HorizontalPanel>-->
+            <!--<g:Button ui:field="addAddress" title="Add address" visible="false"/>-->
+            <!--<g:Button ui:field="chooseAddress" title="Choose address from previous" visible="false"/>-->
+            <!--</g:HorizontalPanel>-->
+            <!--<g:VerticalPanel ui:field="addressPanel"/>-->
+            <!--<g:Button ui:field="confirmOrder" text="Confirm order" visible="false"/>-->
+        <!--</g:VerticalPanel>-->
+    </g:VerticalPanel>
+</ui:UiBinder>

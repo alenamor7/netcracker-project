@@ -1,0 +1,194 @@
+create database postgres
+  with owner postgres;
+
+comment on database postgres is 'default administrative connection database';
+
+create sequence books_book_id_seq;
+
+alter sequence books_book_id_seq owner to postgres;
+
+create sequence adresses_adress_id_seq;
+
+alter sequence adresses_adress_id_seq owner to postgres;
+
+create sequence authors_author_id_seq;
+
+alter sequence authors_author_id_seq owner to postgres;
+
+create sequence customers_customer_id_seq;
+
+alter sequence customers_customer_id_seq owner to postgres;
+
+create sequence genres_genre_id_seq;
+
+alter sequence genres_genre_id_seq owner to postgres;
+
+create sequence users_user_id_seq;
+
+alter sequence users_user_id_seq owner to postgres;
+
+create table genres
+(
+  genre_id   integer default nextval('genres_genre_id_seq'::regclass) not null
+    constraint genres_pkey
+      primary key,
+  genre_name text                                                     not null
+);
+
+alter table genres
+  owner to postgres;
+
+create table authors
+(
+  author_id      integer default nextval('authors_author_id_seq'::regclass) not null
+    constraint authors_pkey
+      primary key,
+  author_name    text                                                       not null,
+  author_surname text                                                       not null
+);
+
+alter table authors
+  owner to postgres;
+
+create table books
+(
+  book_id     integer default nextval('books_book_id_seq'::regclass) not null
+    constraint books_pkey
+      primary key,
+  title       text                                                   not null,
+  publisher   text                                                   not null,
+  pages       bigint                                                 not null,
+  description text,
+  book_qty    integer,
+  photo       text,
+  book_price  numeric                                                not null
+);
+
+alter table books
+  owner to postgres;
+
+create table books_genres
+(
+  book_id  integer not null
+    constraint book_fk
+      references books,
+  genre_id integer not null
+    constraint genre_fk
+      references genres
+);
+
+alter table books_genres
+  owner to postgres;
+
+create table books_authors
+(
+  book_id   integer not null
+    constraint book_fk
+      references books,
+  author_id integer not null
+    constraint author_fk
+      references authors
+);
+
+alter table books_authors
+  owner to postgres;
+
+create table adresses
+(
+  adress_id  integer default nextval('adresses_adress_id_seq'::regclass) not null
+    constraint adresses_pkey
+      primary key,
+  country    text                                                        not null,
+  city       text                                                        not null,
+  street     text                                                        not null,
+  house      integer                                                     not null,
+  flat       integer,
+  post_index text                                                        not null
+);
+
+alter table adresses
+  owner to postgres;
+
+create table users
+(
+  user_id       integer default nextval('users_user_id_seq'::regclass) not null
+    constraint users_pkey
+      primary key,
+  role          text                                                   not null,
+  user_name     text                                                   not null,
+  user_surname  text                                                   not null,
+  user_login    text                                                   not null,
+  user_password text                                                   not null
+);
+
+alter table users
+  owner to postgres;
+
+create table customers
+(
+  customer_id    integer default nextval('customers_customer_id_seq'::regclass) not null
+    constraint customer_pkey
+      primary key,
+  user_id        integer                                                        not null
+    constraint user_fk
+      references users,
+  discount       integer,
+  customer_email text                                                           not null
+);
+
+alter table customers
+  owner to postgres;
+
+create table carts
+(
+  cart_id     serial  not null
+    constraint carts_pkey
+      primary key,
+  customer_id integer not null,
+  books_price double precision
+);
+
+alter table carts
+  owner to postgres;
+
+create table carts_books
+(
+  cart_id integer not null
+    constraint cart_fk
+      references carts,
+  book_id integer not null
+    constraint book_fk
+      references books
+);
+
+alter table carts_books
+  owner to postgres;
+
+create table orders
+(
+  order_id     integer not null
+    constraint orders_pkey
+      primary key,
+  cart_id      integer not null
+    constraint cart_fk
+      references carts,
+  order_date   date    not null,
+  order_status text    not null
+);
+
+alter table orders
+  owner to postgres;
+
+create table customers_adresses
+(
+  customer_id integer not null
+    constraint customer_fk
+      references customers,
+  adress_id   integer not null
+    constraint adress_fk
+      references adresses
+);
+
+alter table customers_adresses
+  owner to postgres;
+

@@ -1,0 +1,31 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:VerticalPanel spacing="5">
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Name: "/>
+            <g:TextBox ui:field="nameBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Surname: "/>
+            <g:TextBox ui:field="surnameBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="E-mail: "/>
+            <g:TextBox ui:field="emailBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Login: "/>
+            <g:TextBox ui:field="loginBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Password: "/>
+            <g:PasswordTextBox ui:field="passwordBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Confirm password : "/>
+            <g:PasswordTextBox ui:field="confirmPasswordBox"/>
+        </g:HorizontalPanel>
+        <g:Button ui:field="signUpButton" text="Create account"/>
+        <g:Label ui:field="errorLabel"/>
+    </g:VerticalPanel>
+</ui:UiBinder>

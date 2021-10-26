@@ -1,0 +1,6 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.0//EN"
+        "http://gwtproject.org/doctype/2.8.1/gwt-module.dtd">
+<module rename-to="frontend">
+    <inherits name='com.exampleproject.gwt.startpoint.StartPoint'/>
+
+</module>

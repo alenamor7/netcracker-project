@@ -1,0 +1,20 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:VerticalPanel spacing="5">
+        <g:cell width="500px"  horizontalAlignment="ALIGN_RIGHT">
+            <g:Button ui:field="close" text="Close"/>
+        </g:cell>
+        <g:Label ui:field="titleLabel"/>
+        <g:Label ui:field="authorLabel"/>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Price: "/>
+            <g:TextBox ui:field="priceBox"/>
+        </g:HorizontalPanel>
+        <g:HorizontalPanel spacing="5">
+            <g:Label text="Book's quantity: "/>
+            <g:TextBox ui:field="qtyBox"/>
+        </g:HorizontalPanel>
+        <g:Button ui:field="editBook" text="Save changes"/>
+        <g:Label ui:field="errorLabel"/>
+    </g:VerticalPanel>
+</ui:UiBinder>
